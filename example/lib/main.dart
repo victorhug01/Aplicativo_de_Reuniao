@@ -25,8 +25,12 @@ class LiveKitExampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-        title: 'LiveKit Flutter Example',
-        theme: LiveKitTheme().buildThemeData(context),
+    debugShowCheckedModeBanner: false,
+        title: 'Objetivo App',
+        theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
         home: const ConnectPage(),
       );
 }

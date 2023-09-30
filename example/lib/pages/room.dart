@@ -3,6 +3,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:livekit_client/livekit_client.dart';
+import 'package:livekit_example/theme.dart';
 
 import '../exts.dart';
 import '../widgets/controls.dart';
@@ -202,6 +203,7 @@ class _RoomPageState extends State<RoomPage> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+    backgroundColor: LKColors.lkWhite,
         body: Stack(
           children: [
             Column(

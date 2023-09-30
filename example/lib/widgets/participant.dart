@@ -131,29 +131,20 @@ abstract class _ParticipantWidgetState<T extends ParticipantWidget>
                 )
               : null,
         ),
-        decoration: BoxDecoration(
-          color: Theme.of(ctx).cardColor,
-        ),
+        //cor por trás do video
         child: Stack(
           children: [
             // Video
             InkWell(
+              //aqui fica o video da pessoa que inicia a sala
               onTap: () => setState(() => _visible = !_visible),
               child: activeVideoTrack != null && !activeVideoTrack!.muted
                   ? VideoTrackRenderer(
-                      activeVideoTrack!,
-                      fit: RTCVideoViewObjectFit.RTCVideoViewObjectFitContain,
-                    )
+                    activeVideoTrack!,
+                    fit: RTCVideoViewObjectFit.RTCVideoViewObjectFitContain,
+                  )
                   : const NoVideoWidget(),
-            ),
-            if (widget.showStatsLayer)
-              Positioned(
-                  top: 30,
-                  right: 30,
-                  child: ParticipantStatsWidget(
-                    participant: widget.participant,
-                  )),
-            // Bottom bar
+            ), // Bottom bar
             Align(
               alignment: Alignment.bottomCenter,
               child: Column(

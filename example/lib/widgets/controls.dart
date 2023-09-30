@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_background/flutter_background.dart';
 import 'package:livekit_client/livekit_client.dart';
 import 'package:flutter_webrtc/flutter_webrtc.dart';
+import 'package:livekit_example/theme.dart';
 
 import '../exts.dart';
 
@@ -275,8 +276,8 @@ class _ControlsWidgetState extends State<ControlsWidget> {
         children: [
           IconButton(
             onPressed: _unpublishAll,
-            icon: const Icon(Icons.cancel),
-            tooltip: 'Unpublish all',
+            icon: const Icon(Icons.close),
+            tooltip: 'Fechar camera/micro',
           ),
           if (participant.isMicrophoneEnabled())
             if (lkPlatformIs(PlatformType.android))
@@ -287,7 +288,7 @@ class _ControlsWidgetState extends State<ControlsWidget> {
               )
             else
               PopupMenuButton<MediaDevice>(
-                icon: const Icon(Icons.settings_voice),
+                icon: Icon(Icons.settings_voice),
                 itemBuilder: (BuildContext context) {
                   return [
                     PopupMenuItem<MediaDevice>(
@@ -444,7 +445,7 @@ class _ControlsWidgetState extends State<ControlsWidget> {
             ),
           IconButton(
             onPressed: _onTapDisconnect,
-            icon: const Icon(Icons.close_sharp),
+            icon: const Icon(Icons.call_end_rounded),
             tooltip: 'disconnect',
           ),
           IconButton(

@@ -30,7 +30,8 @@ class ParticipantInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-        color: Colors.black.withOpacity(0.3),
+    //barra onde fica cor da intenet
+        // color: Colors.black.withOpacity(0.3),
         padding: const EdgeInsets.symmetric(
           vertical: 7,
           horizontal: 10,
